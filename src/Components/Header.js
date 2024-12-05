@@ -3,22 +3,23 @@ import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Badge } from '@mui/material';
 
 function Header({ cartLength }) {
-    return (
-        <AppBar position="sticky">
-            <Toolbar>
-                <Typography variant="h6" style={{ flexGrow: 1 }}>
-                    <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>
-                        Flipkart Clone
-                    </Link>
-                </Typography>
-                <Link to="/cart" style={{ textDecoration: 'none', color: 'white' }}>
-                    <Badge badgeContent={cartLength} color="error">
-                        <Typography variant="body1">Cart</Typography>
-                    </Badge>
-                </Link>
-            </Toolbar>
-        </AppBar>
-    );
+  return (
+    <AppBar position="sticky">
+      <Toolbar>
+        <Typography variant="h6" style={{ flexGrow: 1 }}>
+          <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>
+            Flipkart Clone
+          </Link>
+        </Typography>
+        <Link to="/cart" style={{ textDecoration: 'none', color: 'white' }}>
+          <Badge badgeContent={cartLength} color="error">
+            <Typography variant="body1">Cart</Typography>
+          </Badge>
+        </Link>
+      </Toolbar>
+    </AppBar>
+  );
 }
 
 export default Header;
+
