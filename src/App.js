@@ -3,8 +3,8 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Cart from './Components/Cart';
 import Header from './Components/Header';
-import ProductCard from './Components/productCard';
-import ProductDetails from './Components/productDetails';
+import ProductCard from './Components/ProductCard';
+import ProductDetails from './Components/Productdetails';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -53,3 +53,5 @@ function App() {
 }
 
 export default App;
+
+
