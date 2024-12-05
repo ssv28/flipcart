@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Badge } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 
 function Header({ cartLength }) {
   
@@ -15,7 +17,7 @@ function Header({ cartLength }) {
        
         <Link to="/cart" style={{ textDecoration: 'none', color: 'white' }}>
           <Badge badgeContent={cartLength} color="error">
-            <Typography variant="body1">Cart</Typography>
+            <Typography variant="body1"><ShoppingCartIcon/></Typography>
           </Badge>
         </Link>
       </Toolbar>

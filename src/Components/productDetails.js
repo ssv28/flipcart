@@ -1,6 +1,8 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Typography, Box, CardMedia, Rating, Container, Chip, Button, Divider } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FlashOnIcon from '@mui/icons-material/FlashOn';
 
 function ProductDetails({ addToCart }) {
     const location = useLocation();
@@ -43,7 +45,7 @@ function ProductDetails({ addToCart }) {
                         </Typography>
                     </Box>
 
-                    <Typography variant="h5" color="primary" marginTop={2}>
+                    <Typography variant="h5" color="green" marginTop={2}>
                         Price: ₹ {product.price}
                     </Typography>
                     <Typography variant="body1" color="error" marginTop={1}>
@@ -65,10 +67,10 @@ function ProductDetails({ addToCart }) {
                     <br></br><br></br>
                     {/* Add to Cart Button */}
                     <Button variant="contained" sx={{background:"#d26319"}}  onClick={() => addToCart(product)}>
-                        Add to Cart
+                        <ShoppingCartIcon/>&nbsp;Add to Cart
                     </Button>&nbsp;&nbsp;
                     <Button variant="contained" color="success" sx={{ background: "orange" }}>
-                        Buy Now
+                        <FlashOnIcon/>&nbsp;Buy Now
                     </Button>
                     {/* <Typography variant="h6">Items in Cart: {cartCount}</Typography> */}
                 </Box>

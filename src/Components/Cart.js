@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Button, Grid, Typography, Box, Divider } from '@mui/material';
+import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 
 function Cart({ cart, removeFromCart, handleBuyNow }) {
   return (
@@ -63,7 +64,7 @@ function Cart({ cart, removeFromCart, handleBuyNow }) {
                           textTransform: 'none',
                         }}
                       >
-                        Remove
+                      <RemoveShoppingCartIcon/>  Remove
                       </Button>
                     </Grid>
                     <Grid item xs={6}>

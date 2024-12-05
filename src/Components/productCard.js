@@ -27,7 +27,7 @@ function ProductCard({ products, addToCart }) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
             />
-            
+            <br></br> <br></br> <br></br>
             <Grid container spacing={3}>
                 {filteredProducts.map((product) => (
                     <Grid item xs={12} sm={6} md={3} key={product.id}>
