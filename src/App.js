@@ -5,16 +5,31 @@ import Cart from './Components/Cart';
 import Header from './Components/Header';
 import ProductCard from './Components/ProductCard';
 import ProductDetails from './Components/Productdetails';
+import './App.css'
+
+
+const Loader = () => (
+  <div className="loader-container">
+    <div className="spinner"></div>
+  </div>
+);
 
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [loading, setLoading] = useState(true); // New state for loading
 
   // Fetch products from API
   useEffect(() => {
     axios.get('https://dummyjson.com/products')
-      .then(response => setProducts(response.data.products))
-      .catch(error => console.error('Error fetching products:', error));
+      .then(response => {
+        setProducts(response.data.products);
+        setLoading(false); // Stop loader after data is fetched
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
+        setLoading(false); // Stop loader even if there is an error
+      });
 
     // Load the cart from localStorage when the app is loaded
     const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -44,7 +59,10 @@ function App() {
     <Router>
       <Header cartLength={cart.length} />
       <Routes>
-        <Route path="/" element={<ProductCard products={products} addToCart={addToCart} />} />
+        <Route 
+          path="/" 
+          element={loading ? <Loader /> : <ProductCard products={products} addToCart={addToCart} />} 
+        />
         <Route path="/productDetails" element={<ProductDetails addToCart={addToCart} />} />
         <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} handleBuyNow={handleBuyNow} />} />
       </Routes>
@@ -53,5 +71,4 @@ function App() {
 }
 
 export default App;
-
 
