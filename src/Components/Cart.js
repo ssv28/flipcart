@@ -87,11 +87,15 @@ function Cart({ cart, removeFromCart, handleBuyNow }) {
                   <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
                     {item.title}
                   </Typography>
-                  <Typography variant="body1" sx={{ color: 'green', fontWeight: 'bold' }}>
+                  <Typography variant="body1" sx={{ color: '#000', fontWeight: 'bold' }}>
                     ₹{item.price}
                   </Typography>
-                  <Typography variant="body2" sx={{ color: 'gray' }}>
-                    Discount: {item.discountPercentage}% off
+                  <Typography variant="body2" sx={{ color: 'green' }}>
+                    {item.discountPercentage}% off &nbsp;   {item.availabilityStatus}
+                  </Typography>
+                  <br></br>
+                  <Typography variant="p" gutterBottom>
+                    {item.returnPolicy}
                   </Typography>
 
                   <Divider sx={{ my: 1 }} />
