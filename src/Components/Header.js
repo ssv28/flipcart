@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Badge } from '@mui/material';
 
 function Header({ cartLength }) {
+  
   return (
     <AppBar position="sticky">
       <Toolbar>
@@ -11,6 +12,7 @@ function Header({ cartLength }) {
             Flipkart Clone
           </Link>
         </Typography>
+       
         <Link to="/cart" style={{ textDecoration: 'none', color: 'white' }}>
           <Badge badgeContent={cartLength} color="error">
             <Typography variant="body1">Cart</Typography>
