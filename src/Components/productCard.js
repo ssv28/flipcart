@@ -41,10 +41,9 @@ function ProductCard({ products, addToCart }) {
                             </Typography>
                             {/* <Button onClick={() => handleViewDetails(product)}>View Details</Button> */}
 
-                            <br></br>
-                            <Button onClick={() => addToCart(product)} variant="contained" color="success">
+                            {/* <Button onClick={() => addToCart(product)} variant="contained" color="success">
                                 Add to Cart
-                            </Button>
+                            </Button> */}
                         </CardContent>
                     </Card>
                 </Grid>
