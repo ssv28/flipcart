@@ -1,8 +1,11 @@
 import React from 'react';
 import { Card, CardContent, Button, Grid, Typography, Box, Divider } from '@mui/material';
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
+import { useNavigate } from 'react-router-dom';
+
 
 function Cart({ cart, removeFromCart, handleBuyNow }) {
+  let navigate =  useNavigate()
   return (
     <div>
       <br></br>
@@ -72,7 +75,8 @@ function Cart({ cart, removeFromCart, handleBuyNow }) {
                         fullWidth
                         variant="contained"
                         color="primary"
-                        onClick={handleBuyNow}
+                        // onClick={handleBuyNow}
+                        onClick={() => navigate('/payment')}
                         sx={{
                           background: "#4CAF50",
                           textTransform: 'none',

@@ -6,6 +6,8 @@ import Header from './Components/Header';
 import ProductCard from './Components/ProductCard';
 import ProductDetails from './Components/Productdetails';
 import './App.css'
+import Payment from './Components/Payment';
+
 
 
 const Loader = () => (
@@ -59,11 +61,12 @@ function App() {
     <Router>
       <Header cartLength={cart.length} />
       <Routes>
-        <Route 
-          path="/" 
-          element={loading ? <Loader /> : <ProductCard products={products} addToCart={addToCart} />} 
+        <Route
+          path="/"
+          element={loading ? <Loader /> : <ProductCard products={products} addToCart={addToCart} />}
         />
         <Route path="/productDetails" element={<ProductDetails addToCart={addToCart} />} />
+        <Route path='/payment' element={<Payment />} />
         <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} handleBuyNow={handleBuyNow} />} />
       </Routes>
     </Router>

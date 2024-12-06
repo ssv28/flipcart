@@ -1,10 +1,12 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Typography, Box, CardMedia, Rating, Container, Chip, Button, Divider } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FlashOnIcon from '@mui/icons-material/FlashOn';
 
-function ProductDetails({ addToCart }) {
+function ProductDetails({ addToCart, handlePayment}) {
+    console.log(handlePayment);
+    let navigate =  useNavigate()
     const location = useLocation();
     const product = location.state?.product; // Receive product data via location.state
 
@@ -69,7 +71,7 @@ function ProductDetails({ addToCart }) {
                     <Button variant="contained" sx={{background:"#d26319"}}  onClick={() => addToCart(product)}>
                         <ShoppingCartIcon/>&nbsp;Add to Cart
                     </Button>&nbsp;&nbsp;
-                    <Button variant="contained" color="success" sx={{ background: "orange" }}>
+                    <Button variant="contained" color="success" sx={{ background: "orange" }} onClick={() => navigate('/payment')}>
                         <FlashOnIcon/>&nbsp;Buy Now
                     </Button>
                     {/* <Typography variant="h6">Items in Cart: {cartCount}</Typography> */}
